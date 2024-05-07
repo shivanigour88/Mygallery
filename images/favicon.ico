@@ -1,0 +1,1933 @@
+<!doctype html>
+<html 
+      lang="en"
+      dir="ltr">
+  <head>
+    <meta name="google-signin-client-id" content="157101835696-ooapojlodmuabs2do2vuhhnf90bccmoi.apps.googleusercontent.com">
+    <meta name="google-signin-scope"
+          content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award">
+    <meta property="og:site_name" content="web.dev">
+    <meta property="og:type" content="website"><meta name="theme-color" content="#3740ff"><meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <link rel="manifest" href="/_pwa/web/manifest.json"
+          crossorigin="use-credentials">
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="//apis.google.com" crossorigin>
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700&display=swap">
+      <link rel="stylesheet"
+            href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block"><link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vb47a36f3a983ed748bf281529457db47955fe57e2b5ea15e7e9641c5e7b5032e/web/css/app.css">
+      <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/vb47a36f3a983ed748bf281529457db47955fe57e2b5ea15e7e9641c5e7b5032e/web/images/favicon.png">
+    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/vb47a36f3a983ed748bf281529457db47955fe57e2b5ea15e7e9641c5e7b5032e/web/images/touchicon-180.png"><link rel="canonical" href="https://web.dev/articles/building/an-adaptive-favicon"><link rel="search" type="application/opensearchdescription+xml"
+            title="web.dev" href="https://web.dev/s/opensearch.xml">
+      <link rel="alternate" hreflang="en"
+          href="https://web.dev/articles/building/an-adaptive-favicon" /><link rel="alternate" hreflang="x-default" href="https://web.dev/articles/building/an-adaptive-favicon" /><link rel="alternate" hreflang="ar"
+          href="https://web.dev/articles/building/an-adaptive-favicon?hl=ar" /><link rel="alternate" hreflang="bn"
+          href="https://web.dev/articles/building/an-adaptive-favicon?hl=bn" /><link rel="alternate" hreflang="zh-Hans"
+          href="https://web.dev/articles/building/an-adaptive-favicon?hl=zh-cn" /><link rel="alternate" hreflang="zh-Hant"
+          href="https://web.dev/articles/building/an-adaptive-favicon?hl=zh-tw" /><link rel="alternate" hreflang="fa"
+          href="https://web.dev/articles/building/an-adaptive-favicon?hl=fa" /><link rel="alternate" hreflang="fr"
+          href="https://web.dev/articles/building/an-adaptive-favicon?hl=fr" /><link rel="alternate" hreflang="de"
+          href="https://web.dev/articles/building/an-adaptive-favicon?hl=de" /><link rel="alternate" hreflang="he"
+          href="https://web.dev/articles/building/an-adaptive-favicon?hl=he" /><link rel="alternate" hreflang="hi"
+          href="https://web.dev/articles/building/an-adaptive-favicon?hl=hi" /><link rel="alternate" hreflang="id"
+          href="https://web.dev/articles/building/an-adaptive-favicon?hl=id" /><link rel="alternate" hreflang="it"
+          href="https://web.dev/articles/building/an-adaptive-favicon?hl=it" /><link rel="alternate" hreflang="ja"
+          href="https://web.dev/articles/building/an-adaptive-favicon?hl=ja" /><link rel="alternate" hreflang="ko"
+          href="https://web.dev/articles/building/an-adaptive-favicon?hl=ko" /><link rel="alternate" hreflang="pl"
+          href="https://web.dev/articles/building/an-adaptive-favicon?hl=pl" /><link rel="alternate" hreflang="pt-BR"
+          href="https://web.dev/articles/building/an-adaptive-favicon?hl=pt-br" /><link rel="alternate" hreflang="ru"
+          href="https://web.dev/articles/building/an-adaptive-favicon?hl=ru" /><link rel="alternate" hreflang="es-419"
+          href="https://web.dev/articles/building/an-adaptive-favicon?hl=es-419" /><link rel="alternate" hreflang="th"
+          href="https://web.dev/articles/building/an-adaptive-favicon?hl=th" /><link rel="alternate" hreflang="tr"
+          href="https://web.dev/articles/building/an-adaptive-favicon?hl=tr" /><link rel="alternate" hreflang="vi"
+          href="https://web.dev/articles/building/an-adaptive-favicon?hl=vi" /><link rel="alternate" hreflang="en-cn"
+          href="https://web.developers.google.cn/articles/building/an-adaptive-favicon" /><link rel="alternate" hreflang="x-default" href="https://web.developers.google.cn/articles/building/an-adaptive-favicon" /><link rel="alternate" hreflang="ar-cn"
+          href="https://web.developers.google.cn/articles/building/an-adaptive-favicon?hl=ar" /><link rel="alternate" hreflang="bn-cn"
+          href="https://web.developers.google.cn/articles/building/an-adaptive-favicon?hl=bn" /><link rel="alternate" hreflang="zh-Hans-cn"
+          href="https://web.developers.google.cn/articles/building/an-adaptive-favicon?hl=zh-cn" /><link rel="alternate" hreflang="zh-Hant-cn"
+          href="https://web.developers.google.cn/articles/building/an-adaptive-favicon?hl=zh-tw" /><link rel="alternate" hreflang="fa-cn"
+          href="https://web.developers.google.cn/articles/building/an-adaptive-favicon?hl=fa" /><link rel="alternate" hreflang="fr-cn"
+          href="https://web.developers.google.cn/articles/building/an-adaptive-favicon?hl=fr" /><link rel="alternate" hreflang="de-cn"
+          href="https://web.developers.google.cn/articles/building/an-adaptive-favicon?hl=de" /><link rel="alternate" hreflang="he-cn"
+          href="https://web.developers.google.cn/articles/building/an-adaptive-favicon?hl=he" /><link rel="alternate" hreflang="hi-cn"
+          href="https://web.developers.google.cn/articles/building/an-adaptive-favicon?hl=hi" /><link rel="alternate" hreflang="id-cn"
+          href="https://web.developers.google.cn/articles/building/an-adaptive-favicon?hl=id" /><link rel="alternate" hreflang="it-cn"
+          href="https://web.developers.google.cn/articles/building/an-adaptive-favicon?hl=it" /><link rel="alternate" hreflang="ja-cn"
+          href="https://web.developers.google.cn/articles/building/an-adaptive-favicon?hl=ja" /><link rel="alternate" hreflang="ko-cn"
+          href="https://web.developers.google.cn/articles/building/an-adaptive-favicon?hl=ko" /><link rel="alternate" hreflang="pl-cn"
+          href="https://web.developers.google.cn/articles/building/an-adaptive-favicon?hl=pl" /><link rel="alternate" hreflang="pt-BR-cn"
+          href="https://web.developers.google.cn/articles/building/an-adaptive-favicon?hl=pt-br" /><link rel="alternate" hreflang="ru-cn"
+          href="https://web.developers.google.cn/articles/building/an-adaptive-favicon?hl=ru" /><link rel="alternate" hreflang="es-419-cn"
+          href="https://web.developers.google.cn/articles/building/an-adaptive-favicon?hl=es-419" /><link rel="alternate" hreflang="th-cn"
+          href="https://web.developers.google.cn/articles/building/an-adaptive-favicon?hl=th" /><link rel="alternate" hreflang="tr-cn"
+          href="https://web.developers.google.cn/articles/building/an-adaptive-favicon?hl=tr" /><link rel="alternate" hreflang="vi-cn"
+          href="https://web.developers.google.cn/articles/building/an-adaptive-favicon?hl=vi" /><title>Building an adaptive favicon &nbsp;|&nbsp; Articles &nbsp;|&nbsp; web.dev</title>
+
+<meta property="og:title" content="Building an adaptive favicon &nbsp;|&nbsp; Articles &nbsp;|&nbsp; web.dev"><meta name="description" content="A foundational overview of how to build an adaptive favicon.">
+  <meta property="og:description" content="A foundational overview of how to build an adaptive favicon."><meta property="og:url" content="https://web.dev/articles/building/an-adaptive-favicon"><meta property="og:image" content="https://web.dev/static/articles/building/an-adaptive-favicon/image/thumbnail.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675"><meta property="og:locale" content="en"><meta name="twitter:card" content="summary_large_image"><script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "dateModified": "2022-02-09",
+    "headline": "Building an adaptive favicon"
+  }
+</script><script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Articles",
+      "item": "https://web.dev/articles"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Building an adaptive favicon",
+      "item": "https://web.dev/articles/building/an-adaptive-favicon"
+    }]
+  }
+  </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+    </head>
+  <body class=""
+        template="page"
+        theme="web-theme"
+        type="article"
+        
+        
+        
+        
+        layout="docs"
+        
+        
+        
+        
+        display-toc
+        pending>
+    <devsite-progress type="indeterminate" id="app-progress"></devsite-progress>
+  
+    <section class="devsite-wrapper">
+      
+      <devsite-cookie-notification-bar></devsite-cookie-notification-bar>
+      <devsite-header role="banner">
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-header--inner nocontent">
+  <div class="devsite-top-logo-row-wrapper-wrapper">
+    <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row">
+        <button type="button" id="devsite-hamburger-menu"
+          class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+          data-category="Site-Wide Custom Events"
+          data-label="Navigation menu button"
+          visually-hidden
+          aria-label="Open menu">
+        </button>
+        <div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="webDev" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+
+  
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vb47a36f3a983ed748bf281529457db47955fe57e2b5ea15e7e9641c5e7b5032e/web/images/lockup.svg" class="devsite-site-logo" alt="web.dev">
+  
+
+</a>
+
+
+
+  
+  
+  <span class="devsite-product-name">
+    <ul class="devsite-breadcrumb-list"
+  >
+  
+  <li class="devsite-breadcrumb-item
+             ">
+    
+    
+    
+      
+      
+    
+  </li>
+  
+</ul>
+  </span>
+
+</div>
+        <div class="devsite-top-logo-row-middle">
+          <div class="devsite-header-upper-tabs">
+            
+              
+              
+  <devsite-tabs class="upper-tabs">
+
+    <nav class="devsite-tabs-wrapper" aria-label="Upper tabs">
+      
+        
+          <tab  >
+            
+    <a href="https://web.dev/about"
+      track-metadata-eventdetail="https://web.dev/about"
+    
+       class="devsite-tabs-content gc-analytics-event "
+       track-type="nav"
+       track-metadata-position="nav - about"
+       track-metadata-module="primary nav"
+       
+       
+         
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Tab: About"
+         
+           track-name="about"
+         
+       >
+    About
+  
+    </a>
+  
+  
+          </tab>
+        
+      
+        
+          <tab  >
+            
+    <a href="https://web.dev/blog"
+      track-metadata-eventdetail="https://web.dev/blog"
+    
+       class="devsite-tabs-content gc-analytics-event "
+       track-type="nav"
+       track-metadata-position="nav - blog"
+       track-metadata-module="primary nav"
+       
+       
+         
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Tab: Blog"
+         
+           track-name="blog"
+         
+       >
+    Blog
+  
+    </a>
+  
+  
+          </tab>
+        
+      
+        
+          <tab  >
+            
+    <a href="https://web.dev/articles"
+      track-metadata-eventdetail="https://web.dev/articles"
+    
+       class="devsite-tabs-content gc-analytics-event "
+       track-type="nav"
+       track-metadata-position="nav - articles"
+       track-metadata-module="primary nav"
+       
+       
+         
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Tab: Articles"
+         
+           track-name="articles"
+         
+       >
+    Articles
+  
+    </a>
+  
+  
+          </tab>
+        
+      
+        
+          <tab  >
+            
+    <a href="https://web.dev/learn"
+      track-metadata-eventdetail="https://web.dev/learn"
+    
+       class="devsite-tabs-content gc-analytics-event "
+       track-type="nav"
+       track-metadata-position="nav - learn"
+       track-metadata-module="primary nav"
+       
+       
+         
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Tab: Learn"
+         
+           track-name="learn"
+         
+       >
+    Learn
+  
+    </a>
+  
+  
+          </tab>
+        
+      
+        
+          <tab  >
+            
+    <a href="https://web.dev/explore"
+      track-metadata-eventdetail="https://web.dev/explore"
+    
+       class="devsite-tabs-content gc-analytics-event "
+       track-type="nav"
+       track-metadata-position="nav - explore"
+       track-metadata-module="primary nav"
+       
+       
+         
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Tab: Explore"
+         
+           track-name="explore"
+         
+       >
+    Explore
+  
+    </a>
+  
+  
+          </tab>
+        
+      
+        
+          <tab  >
+            
+    <a href="https://web.dev/patterns"
+      track-metadata-eventdetail="https://web.dev/patterns"
+    
+       class="devsite-tabs-content gc-analytics-event "
+       track-type="nav"
+       track-metadata-position="nav - patterns"
+       track-metadata-module="primary nav"
+       
+       
+         
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Tab: Patterns"
+         
+           track-name="patterns"
+         
+       >
+    Patterns
+  
+    </a>
+  
+  
+          </tab>
+        
+      
+        
+          <tab  >
+            
+    <a href="https://web.dev/case-studies"
+      track-metadata-eventdetail="https://web.dev/case-studies"
+    
+       class="devsite-tabs-content gc-analytics-event "
+       track-type="nav"
+       track-metadata-position="nav - case studies"
+       track-metadata-module="primary nav"
+       
+       
+         
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Tab: Case studies"
+         
+           track-name="case studies"
+         
+       >
+    Case studies
+  
+    </a>
+  
+  
+          </tab>
+        
+      
+    </nav>
+
+  </devsite-tabs>
+
+            
+           </div>
+          
+<devsite-search
+    enable-signin
+    enable-search
+    enable-suggestions
+      enable-query-completion
+    
+    project-name="Articles"
+    tenant-name="web.dev"
+    
+    
+    
+    
+    
+    >
+  <form class="devsite-search-form" action="https://web.dev/s/results" method="GET">
+    <div class="devsite-search-container">
+      <button type="button"
+              search-open
+              class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+              
+              aria-label="Open search"></button>
+      <div class="devsite-searchbox">
+        <input
+          aria-activedescendant=""
+          aria-autocomplete="list"
+          
+          aria-label="Search"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          autocomplete="off"
+          class="devsite-search-field devsite-search-query"
+          name="q"
+          
+          placeholder="Search"
+          role="combobox"
+          type="text"
+          value=""
+          >
+          <div class="devsite-search-image material-icons" aria-hidden="true">
+            
+          </div>
+      </div>
+    </div>
+  </form>
+  <button type="button"
+          search-close
+          class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+          
+          aria-label="Close search"></button>
+</devsite-search>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        
+          aria-current="true">English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="it"
+        >Italiano</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="tr"
+        >Türkçe</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ru"
+        >Русский</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="he"
+        >עברית</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ar"
+        >العربيّة</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fa"
+        >فارسی</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="hi"
+        >हिंदी</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="bn"
+        >বাংলা</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="th"
+        >ภาษาไทย</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+
+        
+
+        
+          
+          
+          <devsite-user 
+                        
+                        
+                          enable-profiles
+                        
+                        
+                        id="devsite-user">
+            
+              
+              <span class="button devsite-top-button" aria-hidden="true" visually-hidden>Sign in</span>
+            
+        </devsite-user>
+           
+        
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="devsite-collapsible-section
+    
+      devsite-header-no-lower-tabs
+    ">
+    <div class="devsite-header-background">
+      
+        
+      
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+  
+</devsite-header>
+      <devsite-book-nav scrollbars hidden>
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-book-nav-filter
+            hidden">
+  <span class="filter-list-icon material-icons" aria-hidden="true"></span>
+  <input type="text"
+         placeholder="Filter"
+         
+         aria-label="Type to filter"
+         role="searchbox">
+  
+  <span class="filter-clear-button hidden"
+        data-title="Clear filter"
+        aria-label="Clear filter"
+        role="button"
+        tabindex="0"></span>
+</div>
+
+<nav class="devsite-book-nav devsite-nav nocontent"
+     aria-label="Side menu">
+  <div class="devsite-mobile-header">
+    <button type="button"
+            id="devsite-close-nav"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Close navigation"
+            aria-label="Close navigation">
+    </button>
+    <div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="webDev" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+
+  
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vb47a36f3a983ed748bf281529457db47955fe57e2b5ea15e7e9641c5e7b5032e/web/images/lockup.svg" class="devsite-site-logo" alt="web.dev">
+  
+
+</a>
+
+
+  
+      <span class="devsite-product-name">
+        
+        
+        <ul class="devsite-breadcrumb-list"
+  >
+  
+  <li class="devsite-breadcrumb-item
+             ">
+    
+    
+    
+      
+      
+    
+  </li>
+  
+</ul>
+      </span>
+    
+
+</div>
+  </div>
+
+  <div class="devsite-book-nav-wrapper">
+    <div class="devsite-mobile-nav-top">
+      
+        <ul class="devsite-nav-list">
+          
+            <li class="devsite-nav-item">
+              
+  
+  <a href="/about"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              "
+    
+
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: About"
+      
+        track-name="about"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: About"
+     track-type="globalNav"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      About
+   </span>
+    
+  
+  </a>
+  
+
+  
+              
+            </li>
+          
+            <li class="devsite-nav-item">
+              
+  
+  <a href="/blog"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              "
+    
+
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: Blog"
+      
+        track-name="blog"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Blog"
+     track-type="globalNav"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Blog
+   </span>
+    
+  
+  </a>
+  
+
+  
+              
+            </li>
+          
+            <li class="devsite-nav-item">
+              
+  
+  <a href="/articles"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              "
+    
+
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: Articles"
+      
+        track-name="articles"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Articles"
+     track-type="globalNav"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Articles
+   </span>
+    
+  
+  </a>
+  
+
+  
+              
+            </li>
+          
+            <li class="devsite-nav-item">
+              
+  
+  <a href="/learn"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              "
+    
+
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: Learn"
+      
+        track-name="learn"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Learn"
+     track-type="globalNav"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Learn
+   </span>
+    
+  
+  </a>
+  
+
+  
+              
+            </li>
+          
+            <li class="devsite-nav-item">
+              
+  
+  <a href="/explore"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              "
+    
+
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: Explore"
+      
+        track-name="explore"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Explore"
+     track-type="globalNav"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Explore
+   </span>
+    
+  
+  </a>
+  
+
+  
+              
+            </li>
+          
+            <li class="devsite-nav-item">
+              
+  
+  <a href="/patterns"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              "
+    
+
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: Patterns"
+      
+        track-name="patterns"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Patterns"
+     track-type="globalNav"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Patterns
+   </span>
+    
+  
+  </a>
+  
+
+  
+              
+            </li>
+          
+            <li class="devsite-nav-item">
+              
+  
+  <a href="/case-studies"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              "
+    
+
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: Case studies"
+      
+        track-name="case studies"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Case studies"
+     track-type="globalNav"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Case studies
+   </span>
+    
+  
+  </a>
+  
+
+  
+              
+            </li>
+          
+          
+          
+        </ul>
+      
+    </div>
+    
+  </div>
+</nav>
+        
+      </devsite-book-nav>
+      <section id="gc-wrapper">
+        <main role="main" class="devsite-main-content"
+            
+              
+              has-sidebar
+            >
+          
+          
+          <div class="devsite-sidebar">
+            <div class="devsite-sidebar-content">
+                
+                <devsite-toc class="devsite-nav"
+                            role="navigation"
+                            aria-label="On this page"
+                            depth="2"
+                            scrollbars
+                  ></devsite-toc>
+                <devsite-recommendations-sidebar class="nocontent devsite-nav">
+                </devsite-recommendations-sidebar>
+            </div>
+          </div>
+          
+          <devsite-content>
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+<article class="devsite-article">
+  
+  
+  
+  
+
+  <div class="devsite-article-meta nocontent" role="navigation">
+    
+    
+    <ul class="devsite-breadcrumb-list"
+  
+    aria-label="Breadcrumb">
+  
+  <li class="devsite-breadcrumb-item
+             ">
+    
+    
+    
+      
+  <a href="https://web.dev/"
+      
+        class="devsite-breadcrumb-link gc-analytics-event"
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Breadcrumbs"
+      
+        data-value="1"
+      
+        track-type="globalNav"
+      
+        track-name="breadcrumb"
+      
+        track-metadata-position="1"
+      
+        track-metadata-eventdetail=""
+      
+    >
+    
+        Home
+      
+  </a>
+  
+    
+  </li>
+  
+  <li class="devsite-breadcrumb-item
+             ">
+    
+      
+      <div class="devsite-breadcrumb-guillemet material-icons" aria-hidden="true"></div>
+    
+    
+    
+      
+  <a href="https://web.dev/articles"
+      
+        class="devsite-breadcrumb-link gc-analytics-event"
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Breadcrumbs"
+      
+        data-value="2"
+      
+        track-type="globalNav"
+      
+        track-name="breadcrumb"
+      
+        track-metadata-position="2"
+      
+        track-metadata-eventdetail="Articles"
+      
+    >
+    
+        Articles
+      
+  </a>
+  
+    
+  </li>
+  
+</ul>
+    
+      
+    <devsite-thumb-rating position="header">
+    </devsite-thumb-rating>
+  
+    
+  </div>
+  <h1 class="devsite-page-title" tabindex="-1">Building an adaptive favicon</h1><devsite-feature-tooltip
+          ack-key="AckCollectionsBookmarkTooltipDismiss"
+          analytics-category="Site-Wide Custom Events"
+          analytics-action-show="Callout Profile displayed"
+          analytics-action-close="Callout Profile dismissed"
+          analytics-label="Create Collection Callout"
+          class="devsite-page-bookmark-tooltip nocontent"
+          dismiss-button="true"
+          id="devsite-collections-dropdown"
+
+          
+          dismiss-button-text="Dismiss"
+
+          
+          close-button-text="Got it">
+
+        
+        <devsite-bookmark></devsite-bookmark>
+
+        <span slot="popout-heading">
+          
+          Stay organized with collections
+        </span>
+        <span slot="popout-contents">
+          
+          Save and categorize content based on your preferences.
+        </span>
+      </devsite-feature-tooltip>
+  <div class="devsite-page-title-meta"><devsite-view-release-notes></devsite-view-release-notes></div>
+  
+
+  <devsite-toc class="devsite-nav"
+    depth="2"
+    devsite-toc-embedded
+    >
+  </devsite-toc>
+  
+    
+  
+
+  
+
+
+
+
+
+
+<div class="devsite-article-body clearfix
+  ">
+
+  
+    
+
+
+
+
+<p>A foundational overview of how to build an adaptive favicon.</p>
+
+<p>
+<div class="wd-authors">
+  
+    
+    
+      <div class="wd-author">
+        
+          <img class="devsite-landing-row-item-icon" alt="Adam Argyle" 
+            src="https://web.dev/images/authors/adamargyle.jpg" 
+            decoding="async" height="64" loading="lazy" width="64"> 
+        
+        <div>
+          <span> 
+            Adam Argyle
+          </span>
+          <div class="wd-author__links">
+            
+              <a href="https://twitter.com/argyleink" aria-label="Adam Argyle on X">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 300 271">
+                  <title>X</title>
+                  <path fill="currentColor" d="m236 0h46l-101 115 118 156h-92.6l-72.5-94.8-83 94.8h-46l107-123-113-148h94.9l65.5 86.6zm-16.1 244h25.5l-165-218h-27.4z"></path>
+                </svg></a>
+            
+            
+              <a href="https://github.com/argyleink" aria-label="Adam Argyle on GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32.6 31.8">
+                  <title>GitHub</title>
+                  <path d="M16.3 0C7.3 0 0 7.3 0 16.3c0 7.2 4.7 13.3 11.1 15.5.8.1 1.1-.4 1.1-.8v-2.8c-4.5 1-5.5-2.2-5.5-2.2-.7-1.9-1.8-2.4-1.8-2.4-1.5-1 .1-1 .1-1 1.6.1 2.5 1.7 2.5 1.7 1.5 2.5 3.8 1.8 4.7 1.4.1-1.1.6-1.8 1-2.2-3.6-.4-7.4-1.8-7.4-8.1 0-1.8.6-3.2 1.7-4.4-.1-.3-.7-2 .2-4.2 0 0 1.4-.4 4.5 1.7 1.3-.4 2.7-.5 4.1-.5 1.4 0 2.8.2 4.1.5 3.1-2.1 4.5-1.7 4.5-1.7.9 2.2.3 3.9.2 4.3 1 1.1 1.7 2.6 1.7 4.4 0 6.3-3.8 7.6-7.4 8 .6.5 1.1 1.5 1.1 3V31c0 .4.3.9 1.1.8 6.5-2.2 11.1-8.3 11.1-15.5C32.6 7.3 25.3 0 16.3 0z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor" />
+                </svg></a>
+            
+            
+              <a href="https://glitch.com/@argyleink" aria-label="Adam Argyle on Glitch">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32">
+                  <title>Glitch</title>
+                  <path fill="currentColor" d="M31.734 16.76c-.385-.198-4.536 1.865-5.427 1.693-2.24-.401-1.828-.667-4.839-1.359-1.203-.266-1.031-.109-1.297-.307-.172-.135-.344-.161-.599-.401 4-.719 6.026-1.693 6.734-1.839.76-.146 5.161 1.958 5.427 1.469.266-.495-.964-1.578-.401-3.031.589-1.464-.693-2.422.016-3.583.719-1.161.573-2.932.396-3.026-.396-.203-4.531 1.865-5.438 1.693-2.24-.417-1.828-.682-4.839-1.359-1.203-.271-1.031-.12-1.297-.323-.266-.198-.521-.13-1.036-.974-.521-.839-6.51-2.13-6.906-2.13-.828 0-2.375 2.13-2.375 2.13s-.599 0-2.401.094c-1.802.094-3.375.896-5.495 2.563C-.173 9.737.134 11.414.134 11.414s1.969.667 1.969 1.042c0 .359-1.729.802-1.729.802 1.12 1.411 4.583 2.745 5.464 2.745h.693c-1.438.281-2.823 1.068-4.583 2.438-2.12 1.698-1.813 3.375-1.813 3.375s1.969.667 1.969 1.026-1.729.802-1.729.802c1.12 1.427 4.583 2.76 5.464 2.76.844 0 1.427.026 2.495-.172.078.172.906 1.932 2.599 2.292 1.786.385 2.776.078 2.776.078s.094-.786-.323-1.573c1.547.161 3.307.203 5.026-.068 4.76-.719 7.12-1.865 7.896-2.01.76-.161 5.161 1.948 5.427 1.464.266-.505-.964-1.583-.385-3.036.573-1.469-.708-2.417 0-3.589.719-1.161.573-2.932.396-3.026zM4.615 11.828a1.446 1.446 0 0 1-.297-.042h-.052c-.026-.01-.052-.026-.078-.042l-.052-.01-.083-.042h-.052a.418.418 0 0 1-.068-.042l-.068-.052-.063-.036-.057-.042c-.021-.016-.042-.036-.063-.052l-.042-.042c-.026-.026-.047-.052-.068-.078l-.026-.031a1.954 1.954 0 0 1-.094-.104l-.026-.026c-.021-.036-.036-.073-.052-.109l-.026-.036-.057-.083c-.005-.021-.016-.042-.026-.063l-.026-.083-.026-.052-.016-.094-.01-.068c-.01-.026-.021-.052-.026-.078v-.068c.094.573.557 1.016 1.104 1.016.63 0 1.146-.573 1.146-1.297 0-.719-.505-1.307-1.146-1.307-.625 0-1.13.573-1.146 1.281 0-.932.667-1.693 1.495-1.693.823 0 1.479.745 1.479 1.682 0 .932-.667 1.693-1.479 1.693zm-1-1.265c0-.203.13-.365.318-.365s.307.161.307.365c0 .198-.135.344-.307.344s-.318-.161-.318-.344zm1 11.651a.712.712 0 0 1-.146 0l-.057-.016a.6.6 0 0 1-.094-.01l-.052-.016-.078-.026-.052-.026c-.031-.005-.057-.016-.083-.026l-.052-.026c-.021-.016-.047-.026-.068-.042L3.881 22l-.068-.052-.052-.042-.068-.052-.042-.042c-.031-.031-.063-.057-.089-.094a.671.671 0 0 1-.094-.12l-.031-.026c-.016-.031-.036-.063-.052-.094l-.026-.052c-.016-.026-.036-.052-.052-.078l-.026-.057-.026-.094-.026-.052-.031-.094-.01-.052c-.01-.031-.021-.063-.026-.094v-.068c.094.573.557 1.016 1.104 1.016.63 0 1.146-.573 1.146-1.292 0-.724-.505-1.297-1.146-1.297-.625 0-1.13.563-1.146 1.266 0-.932.667-1.693 1.495-1.693.823 0 1.479.76 1.479 1.682 0 .917-.667 1.693-1.479 1.693zm-1-1.266c0-.188.13-.349.318-.349s.307.161.307.349c0 .188-.135.344-.307.344s-.318-.146-.318-.344zm6.77-7.333v-.042l.042-.078.078-.297c.182-.583.344-1.172.479-1.771.161-.708.229-1.281.203-1.599-.016-.12-.031-.245-.052-.359a8.276 8.276 0 0 0-.521-1.724l-.083-.172-.026-.068c-.12-.266.057-.573.323-.557h.188l.531.036 2.104.109 1.151.078a28.24 28.24 0 0 1 10.573 2.828l.891.401c.172.078.266.307.188.505-.068.188-.266.292-.438.214l-.896-.401a27.695 27.695 0 0 0-10.359-2.786l-1.146-.068-.51-.026-1.599-.094h-.156c.188.51.339 1.031.453 1.562l.063.427c.042.453-.036 1.078-.224 1.88l-.203.823a23.62 23.62 0 0 1-.385 1.323l-.026.078v.042c-.068.188-.266.292-.438.214-.177-.068-.271-.292-.203-.495zm-2-6.349a.307.307 0 0 1 .479.026c.208.26.396.536.563.828.292.531.495 1.068.547 1.615.026.307 0 .651-.052 1.026a8.718 8.718 0 0 1-.271 1.104c-.094.313-.208.62-.333.922-.078.188-.276.266-.453.172-.172-.094-.24-.318-.156-.521l.026-.052.068-.172c.073-.198.146-.396.214-.599.099-.328.182-.661.24-1 .052-.307.063-.573.052-.802a3.47 3.47 0 0 0-.453-1.292 4.794 4.794 0 0 0-.443-.667l-.036-.042a.417.417 0 0 1 .026-.531zm1.537 13.869c-.063.38-.151.76-.271 1.13a9.549 9.549 0 0 1-.333.906c-.078.188-.276.266-.453.177-.172-.094-.24-.323-.156-.521l.026-.057.068-.172c.073-.198.146-.396.214-.599.099-.328.182-.661.24-1 .052-.307.063-.573.036-.802a3.365 3.365 0 0 0-.438-1.276 4.794 4.794 0 0 0-.443-.667l-.036-.057a.417.417 0 0 1 .026-.531.3.3 0 0 1 .464 0c.214.266.396.547.563.839.292.536.495 1.083.547 1.615.026.307 0 .651-.052 1.026zm16.531.157c-.068.188-.266.297-.438.214l-.896-.401a27.695 27.695 0 0 0-10.359-2.786l-1.135-.063h-.063l-.458-.026c-.583-.036-1.172-.068-1.755-.094l.036.078c.234.615.396 1.255.479 1.906.042.453-.036 1.078-.224 1.88l-.203.828a24.99 24.99 0 0 1-.385 1.333l-.026.068v.036c-.068.203-.266.297-.438.229a.42.42 0 0 1-.203-.51v-.026l.042-.078.078-.292c.182-.589.344-1.177.479-1.776.161-.708.229-1.281.203-1.599-.016-.12-.031-.24-.052-.359a7.996 7.996 0 0 0-.521-1.708l-.052-.12-.031-.068-.026-.063c-.12-.271.057-.578.323-.563h.188l.531.042 2.12.104 1.135.083a28.14 28.14 0 0 1 10.573 2.823l.891.401c.172.078.266.307.188.505z"/>
+                </svg></a>
+            
+            
+            
+            
+              <a href="https://nerdy.dev" aria-label="Adam Argyle's homepage">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 30 30">
+                  <title>Homepage</title>
+                  <circle cx="14.5" cy="14.5" r="13.5" stroke-width="2" stroke-miterlimit="10" fill="none" stroke="currentColor" />
+                  <ellipse cx="14.5" cy="14.5" rx="6.1" ry="13.5" stroke-width="2" stroke-miterlimit="10" fill="none" stroke="currentColor" />
+                  <path d="M1.6 9.6h25.8M1.6 19.4h25.8" stroke-width="2" stroke-miterlimit="10" fill="none" stroke="currentColor" />
+                </svg></a>
+            
+          </div>
+        </div>
+      </div>
+    
+  
+</div></p>
+
+<p>In this post I want to share thinking on how to build an adaptive favicon with
+SVG. Try the <a href="https://gui-challenges.web.app/svg-favicon/dist/">demo</a>.</p>
+
+<figure>
+  <video autoplay loop muted > <source src="/static/articles/building/an-adaptive-favicon/video/vS06HQ1YTsbMKSFTIPl2iogUQP73/SfYwSCUREc4XrS0ZAiZN.mp4" type="video/mp4" /> </video>
+  <figcaption class="wd-caption">
+    Browser tabs shown adapting to MacOS system light and dark theme changes. 
+    <a href="https://gui-challenges.web.app/svg-favicon/dist/">Try the Demo</a>
+  </figcaption>
+</figure>
+
+<p>If you prefer video, here&#39;s a YouTube version of this post:</p>
+
+<p><devsite-video video-id="4pJahmCR8kQ"></devsite-video></p>
+
+<h2 id="overview" data-text="Overview" tabindex="-1">Overview</h2>
+
+<p>A custom <a href="https://developer.mozilla.org/docs/Glossary/Favicon">favicon</a> is
+a great way to polish a web project. It displays on desktop browser tabs, and
+also inside &quot;save for later&quot; readers, other blog posts linking to your site, and
+more. Traditionally this has been done with the <code translate="no" dir="ltr">.ico</code> file type, but recently
+browsers have allowed use of
+<a href="https://developer.mozilla.org/docs/Web/SVG">SVG</a>, a vector format. Using
+<a href="https://developer.mozilla.org/docs/Glossary/Progressive_Enhancement">progressive
+enhancement</a>
+you can  serve well supported <code translate="no" dir="ltr">.ico</code> favicons, and upgrade to an <code translate="no" dir="ltr">.svg</code> if
+available.</p>
+
+<!-- 
+  
+    
+    
+    
+    
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+   
+
+    
+    
+      
+    
+    
+    
+   -->
+
+<aside class="note"><b>Note: </b> As of writing this, <a href="https://caniuse.com/link-icon-svg">SVG favicons</a> allowing inline media queries are supported in Firefox and Chromium based browsers. </aside>
+
+<p><a href="https://css-tricks.com/lodge/svg/">SVG is able</a> to scale up and down without
+quality loss, and can potentially be very small in size, they can also have
+embedded CSS, even embedded media queries. This means if an SVG favicon is used
+in a reader app or bookmarks bars, there&#39;s a chance the user could get a theme
+relevant (light or dark) icon due to dark preference styles provided inside the
+SVG. The SVG then adapts using its embedded styling for light and dark user
+preferences.</p>
+
+<p><img src="/static/articles/building/an-adaptive-favicon/image/large-easy-distinguish-cc5a0d56fe6fc.png" alt="Large and easy to distinguish light and dark favicon examples." width="800" height="450" srcset="https://web.dev/static/articles/building/an-adaptive-favicon/image/large-easy-distinguish-cc5a0d56fe6fc_36.png 36w,https://web.dev/static/articles/building/an-adaptive-favicon/image/large-easy-distinguish-cc5a0d56fe6fc_48.png 48w,https://web.dev/static/articles/building/an-adaptive-favicon/image/large-easy-distinguish-cc5a0d56fe6fc_72.png 72w,https://web.dev/static/articles/building/an-adaptive-favicon/image/large-easy-distinguish-cc5a0d56fe6fc_96.png 96w,https://web.dev/static/articles/building/an-adaptive-favicon/image/large-easy-distinguish-cc5a0d56fe6fc_480.png 480w,https://web.dev/static/articles/building/an-adaptive-favicon/image/large-easy-distinguish-cc5a0d56fe6fc_720.png 720w,https://web.dev/static/articles/building/an-adaptive-favicon/image/large-easy-distinguish-cc5a0d56fe6fc_856.png 856w,https://web.dev/static/articles/building/an-adaptive-favicon/image/large-easy-distinguish-cc5a0d56fe6fc_960.png 960w,https://web.dev/static/articles/building/an-adaptive-favicon/image/large-easy-distinguish-cc5a0d56fe6fc_1440.png 1440w,https://web.dev/static/articles/building/an-adaptive-favicon/image/large-easy-distinguish-cc5a0d56fe6fc_1920.png 1920w,https://web.dev/static/articles/building/an-adaptive-favicon/image/large-easy-distinguish-cc5a0d56fe6fc_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+
+<figure>
+  <img src="/static/articles/building/an-adaptive-favicon/image/light-dark-tabs-each-br-1bd458c8c5743.png" alt="Light and dark tabs in each browser providing an 
+    overview of the adaptive icon from top to bottom: 
+    Safari, Firefox, Chrome." width="508" height="477">
+  <figcaption class="wd-caption">
+    Light and dark tabs in each browser providing an 
+    overview of the adaptive icon from top to bottom: 
+    Safari, Firefox, Chrome.
+  </figcaption>
+</figure>
+
+<h2 id="markup" data-text="Markup" tabindex="-1">Markup</h2>
+
+<p>SVG markup is
+<a href="https://developer.mozilla.org/docs/Web/XML/XML_introduction">XML</a> using
+an <code translate="no" dir="ltr">.svg</code> file type extension which allows it to hold more dynamic types of
+code. </p>
+
+<h3 id="start_by_making_faviconsvg" data-text="Start by making favicon.svg" tabindex="-1">Start by making <code translate="no" dir="ltr">favicon.svg</code></h3>
+
+<p>Make a new file called <code translate="no" dir="ltr">favicon.svg</code> and add the following:</p>
+<pre class="prettyprint lang-xml" translate="no" dir="ltr"><code translate="no" dir="ltr">&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 400 400&#34;&gt;
+
+&lt;/svg&gt;
+</code></pre>
+<aside class="note"><b>Note: </b> This wrapping tag is similar to the <code translate="no" dir="ltr">&lt;html&gt;</code> tag don't you think? </aside>
+
+<p>Here&#39;s my SVG file, I&#39;ve sized the <code translate="no" dir="ltr">viewBox</code> relevant to my artwork:</p>
+<pre class="prettyprint lang-xml" translate="no" dir="ltr"><code translate="no" dir="ltr">&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 447 428&#34;&gt;
+
+&lt;/svg&gt;
+</code></pre>
+<h3 id="adding_shapes_and_paths" data-text="Adding shapes and paths" tabindex="-1">Adding shapes and paths</h3>
+
+<p>Next, add SVG path code. Often this means opening the SVG in a code editor, but
+that code is generally not human friendly. Here&#39;s a <a href="https://css-tricks.com/using-svg/">great guide that guides you
+through exporting and optimizing SVG</a> from
+design tools.</p>
+
+<p>The artwork for this <a href="/shows/gui-challenges">GUI Challenge</a> came
+from a designer who made it in <a href="https://www.adobe.com/products/illustrator.html">Adobe
+Illustrator</a>. I heavily
+optimized it. I ran it through <a href="https://jakearchibald.github.io/svgomg/">SVGOMG</a>
+and then hand-edited the cruft away.</p>
+
+<p>Here&#39;s an example of the <code translate="no" dir="ltr">skull</code> artwork path group from mine, after cleaning
+it:</p>
+<pre class="prettyprint lang-xml/1-5/" translate="no" dir="ltr"><code translate="no" dir="ltr">&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 447 428&#34;&gt;
+  &lt;g id=&#34;skull&#34;&gt;
+    &lt;path id=&#34;skull-outline&#34; class=&#34;favicon-stroke&#34; stroke-linejoin=&#34;round&#34; d=&#34;M19.62 188.39A166.62 166.62 0 0 1 186.24 21.77c115.25 0 166.61 74.59 166.61 166.62 0 1.83-.08 3.64-.13 5.46h.13s.68 175.09.68 178.65c0 30.11-16.26 41.67-36.32 41.67-12.7 0-35.22-3.93-36.22-32.69h-.2c-1 28.76-16.81 32.69-36.22 32.69-18 0-32.87-6.78-35.77-32.53-2.9 25.75-17.8 32.53-35.8 32.53-20.06 0-36.32-11.56-36.32-41.67 0-2.48.36-24.88.36-24.88A166.68 166.68 0 0 1 19.62 188.39Z&#34; /&gt;
+    &lt;path id=&#34;eyes-and-nose&#34; d=&#34;M180.77 205.76c0 23.64 12.84 42.81 28.68 42.81s28.68-19.17 28.68-42.81-12.84-42.82-28.68-42.82-28.68 19.17-28.68 42.82M275 205.76c0 23.64 12.84 42.81 28.68 42.81s28.68-19.17 28.68-42.81-12.84-42.82-28.68-42.82S275 182.11 275 205.76M264.51 276.85s-29.26 43.53-20.12 49.23c7.07 4.41 20.49-16.71 20.49-16.71s12.82 22.58 16.76 20c16.24-10.71-17.13-52.5-17.13-52.5&#34;/&gt;
+    &lt;path id=&#34;jawline&#34; class=&#34;favicon-stroke&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; d=&#34;M114.92 284.33c22.54-1 22 7 22 62.48&#34; /&gt;
+  &lt;/g&gt;
+&lt;/svg&gt;
+</code></pre>
+<p>Notice the human readable <a href="https://developer.mozilla.org/docs/Web/CSS/ID_selectors">ID
+selectors</a> like
+<code translate="no" dir="ltr">#eyes-and-nose</code> and
+<a href="https://developer.mozilla.org/docs/Web/CSS/Class_selectors">classes</a> like
+<code translate="no" dir="ltr">.favicon-stroke</code>. These are from my hand editing, in preparation for CSS.
+Adding classes and ID&#39;s is not required for your SVG to be an adaptive favicon.</p>
+
+<video autoplay loop muted > <source src="/static/articles/building/an-adaptive-favicon/video/vS06HQ1YTsbMKSFTIPl2iogUQP73/McyYsaCZieXjS6SbD12v.mp4" type="video/mp4" /> </video>
+
+<h3 id="link_the_favicon_svg_from_html" data-text="Link the favicon SVG from HTML" tabindex="-1">Link the favicon SVG from HTML</h3>
+
+<p>In the <code translate="no" dir="ltr">&lt;head&gt;</code> tag of your HTML, after the <code translate="no" dir="ltr">.ico</code> favicon, add the following:</p>
+<pre class="prettyprint lang-html/1/" translate="no" dir="ltr"><code translate="no" dir="ltr">&lt;link rel=&#34;icon&#34; href=&#34;/favicon.ico&#34; sizes=&#34;any&#34;&gt;
+&lt;link rel=&#34;icon&#34; href=&#34;/favicon.svg&#34; type=&#34;image/svg+xml&#34;&gt;
+</code></pre>
+<p>As the new icon may look identical to the <code translate="no" dir="ltr">.ico</code> version verify that it is being
+used. Open the Network panel of DevTools. Filter by images and search for
+favicon:</p>
+
+<p><img src="/static/articles/building/an-adaptive-favicon/image/screenshot-the-network-p-938068735fbde.png" alt="Screenshot of the Network pane from DevTools with a filter searched for
+favicon and the favicon.svg resource highlighted." width="800" height="409"></p>
+
+<h2 id="styles" data-text="Styles" tabindex="-1">Styles</h2>
+
+<p>Like HTML, you can add a <code translate="no" dir="ltr">&lt;style&gt;</code> tag to the markup for use against that
+document scope:</p>
+<pre class="prettyprint lang-html/1-3/" translate="no" dir="ltr"><code translate="no" dir="ltr">&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 447 428&#34;&gt;
+  &lt;style&gt;
+    
+  &lt;/style&gt;
+  …
+&lt;/svg&gt;
+</code></pre>
+<p>The light theme version will be the default coloring of my favicon SVG. The
+styles I wrote for that were mostly stroke and fill colors:</p>
+<pre class="prettyprint lang-html/2-8/" translate="no" dir="ltr"><code translate="no" dir="ltr">&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 447 428&#34;&gt;
+  &lt;style&gt;
+    .favicon-stroke {
+      stroke-width: 8px;
+      stroke: #8929ff;
+    }
+    #skull-outline { fill: white }
+    #eyes-and-nose, #hat-outline { fill: #8929ff }
+    #hat-fill, #hat-bill { fill: #e662e6 }
+  &lt;/style&gt;
+  …
+&lt;/svg&gt;
+</code></pre>
+<p><img src="/static/articles/building/an-adaptive-favicon/image/example-light-theme-favic-d92b9def036e6.png" alt="Example light theme favicon preview." width="720" height="720" srcset="https://web.dev/static/articles/building/an-adaptive-favicon/image/example-light-theme-favic-d92b9def036e6_36.png 36w,https://web.dev/static/articles/building/an-adaptive-favicon/image/example-light-theme-favic-d92b9def036e6_48.png 48w,https://web.dev/static/articles/building/an-adaptive-favicon/image/example-light-theme-favic-d92b9def036e6_72.png 72w,https://web.dev/static/articles/building/an-adaptive-favicon/image/example-light-theme-favic-d92b9def036e6_96.png 96w,https://web.dev/static/articles/building/an-adaptive-favicon/image/example-light-theme-favic-d92b9def036e6_480.png 480w,https://web.dev/static/articles/building/an-adaptive-favicon/image/example-light-theme-favic-d92b9def036e6_720.png 720w,https://web.dev/static/articles/building/an-adaptive-favicon/image/example-light-theme-favic-d92b9def036e6_856.png 856w,https://web.dev/static/articles/building/an-adaptive-favicon/image/example-light-theme-favic-d92b9def036e6_960.png 960w,https://web.dev/static/articles/building/an-adaptive-favicon/image/example-light-theme-favic-d92b9def036e6_1440.png 1440w,https://web.dev/static/articles/building/an-adaptive-favicon/image/example-light-theme-favic-d92b9def036e6_1920.png 1920w,https://web.dev/static/articles/building/an-adaptive-favicon/image/example-light-theme-favic-d92b9def036e6_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+
+<p>Next, the most fun part, styling the dark theme version of your favicon. The
+styles for that will go into a media query within the style tag:</p>
+<pre class="prettyprint lang-html/3-5/" translate="no" dir="ltr"><code translate="no" dir="ltr">&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 447 428&#34;&gt;
+  &lt;style&gt;
+    …
+    @media (prefers-color-scheme: dark) {
+      /* dark theme styles */
+    }
+  &lt;/style&gt;
+  …
+&lt;/svg&gt;
+</code></pre>
+<p><img src="/static/articles/building/an-adaptive-favicon/image/screenshot-devtools-show-c818b63fd5183.png" alt="Screenshot of DevTools showing the dark theme media query overwriting the
+fill color of the eyes and nose of the SVG." width="800" height="662"></p>
+
+<p>Mine ended up like this:</p>
+<pre class="prettyprint lang-html/3-8/" translate="no" dir="ltr"><code translate="no" dir="ltr">&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 447 428&#34;&gt;
+  &lt;style&gt;
+    …
+    @media (prefers-color-scheme: dark) {
+      .favicon-stroke { stroke: #343a40 }
+      #skull-outline { fill: #adb5bd }
+      #hat-outline { fill: #343a40 }
+      #eyes-and-nose { fill: #343a40 }
+    }
+  &lt;/style&gt;
+  …
+&lt;/svg&gt;
+</code></pre>
+<p><img src="/static/articles/building/an-adaptive-favicon/image/example-dark-theme-favico-6a6f6f67bc3e7.png" alt="Example dark theme favicon preview." width="720" height="720" srcset="https://web.dev/static/articles/building/an-adaptive-favicon/image/example-dark-theme-favico-6a6f6f67bc3e7_36.png 36w,https://web.dev/static/articles/building/an-adaptive-favicon/image/example-dark-theme-favico-6a6f6f67bc3e7_48.png 48w,https://web.dev/static/articles/building/an-adaptive-favicon/image/example-dark-theme-favico-6a6f6f67bc3e7_72.png 72w,https://web.dev/static/articles/building/an-adaptive-favicon/image/example-dark-theme-favico-6a6f6f67bc3e7_96.png 96w,https://web.dev/static/articles/building/an-adaptive-favicon/image/example-dark-theme-favico-6a6f6f67bc3e7_480.png 480w,https://web.dev/static/articles/building/an-adaptive-favicon/image/example-dark-theme-favico-6a6f6f67bc3e7_720.png 720w,https://web.dev/static/articles/building/an-adaptive-favicon/image/example-dark-theme-favico-6a6f6f67bc3e7_856.png 856w,https://web.dev/static/articles/building/an-adaptive-favicon/image/example-dark-theme-favico-6a6f6f67bc3e7_960.png 960w,https://web.dev/static/articles/building/an-adaptive-favicon/image/example-dark-theme-favico-6a6f6f67bc3e7_1440.png 1440w,https://web.dev/static/articles/building/an-adaptive-favicon/image/example-dark-theme-favico-6a6f6f67bc3e7_1920.png 1920w,https://web.dev/static/articles/building/an-adaptive-favicon/image/example-dark-theme-favico-6a6f6f67bc3e7_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+
+<p>I chose to swap the bright purple borders for a nice cool dark gray (<code translate="no" dir="ltr">#343a40</code>),
+changed the skull bone color from white to a light cool gray (<code translate="no" dir="ltr">#adb5bd</code>), but
+left the pink accent hat.</p>
+
+<p><img src="/static/articles/building/an-adaptive-favicon/image/preview-both-light-dark-7a562cd512a6b.png" alt="Preview of both light and dark favicons side by side." width="800" height="450" srcset="https://web.dev/static/articles/building/an-adaptive-favicon/image/preview-both-light-dark-7a562cd512a6b_36.png 36w,https://web.dev/static/articles/building/an-adaptive-favicon/image/preview-both-light-dark-7a562cd512a6b_48.png 48w,https://web.dev/static/articles/building/an-adaptive-favicon/image/preview-both-light-dark-7a562cd512a6b_72.png 72w,https://web.dev/static/articles/building/an-adaptive-favicon/image/preview-both-light-dark-7a562cd512a6b_96.png 96w,https://web.dev/static/articles/building/an-adaptive-favicon/image/preview-both-light-dark-7a562cd512a6b_480.png 480w,https://web.dev/static/articles/building/an-adaptive-favicon/image/preview-both-light-dark-7a562cd512a6b_720.png 720w,https://web.dev/static/articles/building/an-adaptive-favicon/image/preview-both-light-dark-7a562cd512a6b_856.png 856w,https://web.dev/static/articles/building/an-adaptive-favicon/image/preview-both-light-dark-7a562cd512a6b_960.png 960w,https://web.dev/static/articles/building/an-adaptive-favicon/image/preview-both-light-dark-7a562cd512a6b_1440.png 1440w,https://web.dev/static/articles/building/an-adaptive-favicon/image/preview-both-light-dark-7a562cd512a6b_1920.png 1920w,https://web.dev/static/articles/building/an-adaptive-favicon/image/preview-both-light-dark-7a562cd512a6b_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+
+<h2 id="conclusion" data-text="Conclusion" tabindex="-1">Conclusion</h2>
+
+<p>Now that you know how I did it, how would you‽ 🙂 </p>
+
+<p>Let&#39;s diversify our approaches and learn all the ways to build on the web.
+Create a demo, <a href="https://twitter.com/argyleink">tweet me</a> links, and I&#39;ll add it
+to the community remixes section below!</p>
+
+<h2 id="community_remixes" data-text="Community remixes" tabindex="-1">Community remixes</h2>
+
+<ul>
+<li>Where I learned of this technique: <a href="https://twitter.com/tomayac">@tomayac</a> on
+his
+<a href="https://blog.tomayac.com/2019/09/21/prefers-color-scheme-in-svg-favicons-for-dark-mode-icons/">blog</a></li>
+</ul>
+
+  
+
+  
+</div>
+
+  
+
+  
+    
+    
+      
+    <devsite-thumb-rating position="footer">
+    </devsite-thumb-rating>
+  
+       
+    
+    
+  
+
+  
+  
+</article>
+
+
+<devsite-content-footer class="nocontent">
+  <p>Except as otherwise noted, the content of this page is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</a>, and code samples are licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see the <a href="https://developers.google.com/site-policies">Google Developers Site Policies</a>. Java is a registered trademark of Oracle and/or its affiliates.</p>
+  <p>Last updated 2022-02-09 UTC.</p>
+</devsite-content-footer>
+
+
+<devsite-notification
+>
+</devsite-notification>
+
+
+  
+<div class="devsite-content-data">
+  <template class="devsite-thumb-rating-down-categories">
+  [{
+      "type": "thumb-down",
+      "id": "missingTheInformationINeed",
+      "label":"Missing the information I need"
+    },{
+      "type": "thumb-down",
+      "id": "tooComplicatedTooManySteps",
+      "label":"Too complicated / too many steps"
+    },{
+      "type": "thumb-down",
+      "id": "outOfDate",
+      "label":"Out of date"
+    },{
+      "type": "thumb-down",
+      "id": "samplesCodeIssue",
+      "label":"Samples / code issue"
+    },{
+      "type": "thumb-down",
+      "id": "otherDown",
+      "label":"Other"
+    }]
+  </template>
+  <template class="devsite-thumb-rating-up-categories">
+  [{
+      "type": "thumb-up",
+      "id": "easyToUnderstand",
+      "label":"Easy to understand"
+    },{
+      "type": "thumb-up",
+      "id": "solvedMyProblem",
+      "label":"Solved my problem"
+    },{
+      "type": "thumb-up",
+      "id": "otherUp",
+      "label":"Other"
+    }]
+  </template>
+  
+</div>
+            
+          </devsite-content>
+        </main>
+        <devsite-footer-promos class="devsite-footer">
+          
+            
+          
+        </devsite-footer-promos>
+        <devsite-footer-linkboxes class="devsite-footer">
+          
+            
+<nav class="devsite-footer-linkboxes nocontent" aria-label="Footer links">
+  
+  <ul class="devsite-footer-linkboxes-list">
+    
+    <li class="devsite-footer-linkbox wd-footer-promo">
+    <h3 class="devsite-footer-linkbox-heading no-link">web.dev</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <h3 class="devsite-footer-linkbox-heading no-link">
+          
+            web.dev
+          
+          </h3>
+          
+          
+          <div class="devsite-footer-linkbox-description">We want to help you build beautiful, accessible, fast, and secure websites that work cross-browser, and for all of your users. This site is our home for content to help you on that journey, written by members of the Chrome team, and external experts.</div>
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Contribute</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://issuetracker.google.com/issues/new?component=1400680&amp;template=1857359"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            File a bug
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://issuetracker.google.com/issues?q=status:open%20componentid:1400680&amp;s=created_time:desc"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+              
+              
+            
+          
+            See open issues
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Related Content</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://developer.chrome.com/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Chrome for Developers
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://blog.chromium.org/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Chromium updates
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/case-studies"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Case studies
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/shows"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+              
+              
+            
+          
+            Podcasts &amp; shows
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Connect</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://twitter.com/ChromiumDev"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            @ChromiumDev on X
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://www.youtube.com/user/ChromeDevelopers"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+              
+              
+            
+          
+            YouTube
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+  
+</nav>
+          
+        </devsite-footer-linkboxes>
+        <devsite-footer-utility class="devsite-footer">
+          
+            
+
+<div class="devsite-footer-utility nocontent">
+  
+
+  
+  <nav class="devsite-footer-utility-links" aria-label="Utility links">
+    
+    <ul class="devsite-footer-utility-list">
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//policies.google.com/terms"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Terms link"
+         >
+          Terms
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//policies.google.com/privacy"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Privacy link"
+         >
+          Privacy
+        </a>
+        
+      </li>
+      
+    </ul>
+    
+    
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        
+          aria-current="true">English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="it"
+        >Italiano</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="tr"
+        >Türkçe</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ru"
+        >Русский</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="he"
+        >עברית</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ar"
+        >العربيّة</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fa"
+        >فارسی</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="hi"
+        >हिंदी</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="bn"
+        >বাংলা</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="th"
+        >ภาษาไทย</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+  </nav>
+</div>
+          
+        </devsite-footer-utility>
+        <devsite-panel></devsite-panel>
+        
+      </section></section>
+    <devsite-sitemask></devsite-sitemask>
+    <devsite-snackbar
+    
+    >
+</devsite-snackbar>
+    <devsite-tooltip ></devsite-tooltip>
+    <devsite-heading-link></devsite-heading-link>
+    <devsite-analytics analytics-iframe enable-cb>
+      
+        <script type="application/json" analytics>[]</script>
+<script type="application/json" tag-management>{&#34;ga4&#34;: [], &#34;ga4p&#34;: [], &#34;gtm&#34;: [{&#34;id&#34;: &#34;GTM-MZWCJPP&#34;, &#34;purpose&#34;: 0}], &#34;parameters&#34;: {&#34;internalUser&#34;: &#34;False&#34;, &#34;language&#34;: {&#34;machineTranslated&#34;: &#34;False&#34;, &#34;requested&#34;: &#34;en&#34;, &#34;served&#34;: &#34;en&#34;}, &#34;pageType&#34;: &#34;article&#34;, &#34;projectName&#34;: &#34;Articles&#34;, &#34;signedIn&#34;: &#34;False&#34;, &#34;tenant&#34;: &#34;web&#34;, &#34;recommendations&#34;: {&#34;sourcePage&#34;: &#34;&#34;, &#34;sourceType&#34;: 0, &#34;sourceRank&#34;: 0, &#34;sourceIdenticalDescriptions&#34;: 0, &#34;sourceTitleWords&#34;: 0, &#34;sourceDescriptionWords&#34;: 0, &#34;experiment&#34;: &#34;&#34;}, &#34;experiment&#34;: {&#34;ids&#34;: &#34;&#34;}}}</script>
+      
+    </devsite-analytics>
+    
+      <devsite-badger></devsite-badger>
+    
+    
+    <script nonce="w+fNIcc7awnD9/Wzw27EyyS+ifLYoT">
+  
+  (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+    t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+    E.parentNode.insertBefore(t,E);})(window, document, 'script',
+    'https://www.gstatic.com/devrel-devsite/prod/vb47a36f3a983ed748bf281529457db47955fe57e2b5ea15e7e9641c5e7b5032e/web/js/app_loader.js', '[27,"en",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/vb47a36f3a983ed748bf281529457db47955fe57e2b5ea15e7e9641c5e7b5032e","https://www.gstatic.com/devrel-devsite/prod/vb47a36f3a983ed748bf281529457db47955fe57e2b5ea15e7e9641c5e7b5032e/web","https://web-dot-devsite-v2-prod-3p.appspot.com",1,null,["/_pwa/web/manifest.json","https://www.gstatic.com/devrel-devsite/prod/vb47a36f3a983ed748bf281529457db47955fe57e2b5ea15e7e9641c5e7b5032e/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/vb47a36f3a983ed748bf281529457db47955fe57e2b5ea15e7e9641c5e7b5032e/web/images/favicon.png","https://www.gstatic.com/devrel-devsite/prod/vb47a36f3a983ed748bf281529457db47955fe57e2b5ea15e7e9641c5e7b5032e/web/images/lockup.svg","https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700&display=swap"],1,null,[1,6,8,12,14,17,21,25,50,52,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,112,113,116,117,118,120,122,124,125,126,127,129,130,131,132,133,134,135,136,138,140,141,147,148,149,150,151,152,155,156,157,158,159,161,163,164,168,169,170,172,179,180,182,183,186,190,191,193,196],"AIzaSyCNm9YxQumEXwGJgTDjxoxXK6m1F-9720Q","AIzaSyCc76DZePGtoyUjqKrLdsMGk_ry7sljLbY","web.dev","AIzaSyB9bqgQ2t11WJsOX8qNsCQ6U-w91mmqF-I","AIzaSyAdYnStPdzjcJJtQ0mvIaeaMKj7_t6J_Fg",null,null,null,["Cloud__enable_cloudx_ping","Cloud__enable_cloud_facet_chat","Search__enable_dynamic_content_confidential_banner","Profiles__enable_page_saving","Cloud__enable_cloud_shell_fte_user_flow","MiscFeatureFlags__developers_footer_dark_image","Concierge__enable_pushui","MiscFeatureFlags__enable_project_variables","Analytics__enable_cookie_bar","Profiles__enable_release_notes_notifications","MiscFeatureFlags__developers_footer_image","Search__enable_page_map","Cloud__enable_cloudx_experiment_ids","Badges__enable_drag_and_drop_badges","Profiles__enable_profile_collections","OnSwitch__enable","Profiles__enable_profile_notifications_ui","AuthorPageInsights__enable_author_page_insights","MiscFeatureFlags__enable_explain_this_code","OpenInReplit__enable_replit","ContentExcellence__enable_verified_date","Experiments__reqs_query_experiments","BookNav__enable_book_nav_filtering","Profiles__enable_inferred_interests","Search__enable_faceted_search","BookNav__enable_tenant_cache_key","Cloud__enable_cloud_dlp_service","Profiles__enable_profile_communities","Profiles__enable_developer_profiles_callout","SignIn__enable_auto_signin_oauth","MiscFeatureFlags__enable_firebase_utm","Badges__enable_hide_badges","Significatio__enable_experiment_id_caching","Profiles__require_profile_eligibility_for_signin","Profiles__enable_awarding_url","Cloud__enable_cloud_shell","Cloud__enable_free_trial_server_call","Profiles__enable_public_developer_profiles","Search__enable_suggestions_from_borg","Profiles__enable_developer_profiles_dashboard_recommendations","MiscFeatureFlags__enable_keyword_inheritance","MiscFeatureFlags__content_publisher_push_queue","ContentExcellence__enable_googler_button","BookNav__enable_collapsible_book_nav"],null,null,"AIzaSyA58TaKli1DculwmAmbpzLVGuWc8eCQgQc","https://developerscontentserving-pa.googleapis.com","AIzaSyDWBU60w0P9hEkr29kkksYs8Z7gvZ8u_wc","https://developerscontentsearch-pa.googleapis.com",2]')
+  
+</script>
+    <devsite-a11y-announce></devsite-a11y-announce>
+  </body>
+</html>
